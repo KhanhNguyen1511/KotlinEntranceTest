@@ -20,8 +20,8 @@ object UserRepository {
             val json = JsonObject().apply {
                 this.addProperty("email",req.email)
                 this.addProperty("password",req.password)
-                this.addProperty("firstName","Test03")
-                this.addProperty("lastName","Mr")
+                this.addProperty("firstName",req.firstName)
+                this.addProperty("lastName",req.lastName)
             }
             val resp = RestClient.restClient.postApi("auth/signup",json).handleResp()
             emit(resp)

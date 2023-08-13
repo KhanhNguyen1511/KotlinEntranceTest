@@ -13,58 +13,48 @@ import java.net.UnknownHostException
 fun Response<ResponseBody>.handleResp(): ApiResp {
     val resp = this@handleResp
     val respBody = resp.body()?.string()
-    Log.d("kotlinTestResp", "JsonBody:\n $respBody")
+    Log.d("handleResp", "JsonBody:\n $respBody")
     val result = ApiResp()
-    if (resp.code() != 200) {
+
+    return try {
+        val jsonData = JSONObject(respBody)
         result.apply {
             code = resp.code()
             message = resp.message()
+            data = jsonData
         }
-        return result
-    } else {
-        return try {
-            val jsonData = JSONObject(respBody)
-            result.apply {
-                data = jsonData
-            }
-            result
-        } catch (e: Exception) {
-            e.printStackTrace()
-            result.apply {
-                code = -2
-                message = "convert data fail"
-            }
-            result
+        result
+    } catch (e: Exception) {
+        e.printStackTrace()
+        result.apply {
+            code = -2
+            message = "convert data fail"
         }
+        result
     }
 }
 
 fun Response<ResponseBody>.handleRespArray(): ApiResp {
     val resp = this@handleRespArray
     val respBody = resp.body()?.string()
-    Log.d("kotlinTestResp", "JsonBody:\n $respBody")
+    Log.d("handleRespArray", "JsonBody:\n $respBody")
     val result = ApiResp()
-    if (resp.code() != 200) {
+
+    return try {
+        val jsonData = JSONArray(respBody)
         result.apply {
             code = resp.code()
             message = resp.message()
+            arrData = jsonData
         }
-        return result
-    } else {
-        return try {
-            val jsonData = JSONArray(respBody)
-            result.apply {
-                arrData = jsonData
-            }
-            result
-        } catch (e: Exception) {
-            e.printStackTrace()
-            result.apply {
-                code = -2
-                message = "convert data fail"
-            }
-            result
+        result
+    } catch (e: Exception) {
+        e.printStackTrace()
+        result.apply {
+            code = -2
+            message = "convert data fail"
         }
+        result
     }
 }
 

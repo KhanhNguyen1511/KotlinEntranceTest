@@ -4,9 +4,9 @@ import com.google.gson.annotations.SerializedName
 
 data class UserSignUpReq(
     @SerializedName("firstName")
-    var firstName: String="Tester01",
+    var firstName: String="Ngo Dinh",
     @SerializedName("lastName")
-    var lastName: String="Mr",
+    var lastName: String="Khanh Nguyen",
     @SerializedName("email")
     var email: String="",
     @SerializedName("password")
@@ -16,7 +16,7 @@ data class UserSignUpReq(
 
 data class UserSignUpResp(
     @SerializedName("id")
-    var id: String="",
+    var id: Int= 0,
     @SerializedName("firstName")
     var firstName: String="",
     @SerializedName("lastName")

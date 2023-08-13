@@ -14,6 +14,7 @@ import nguyen.dev.kotlinentrancetest.MainGraphDirections
 import nguyen.dev.kotlinentrancetest.R
 import nguyen.dev.kotlinentrancetest.databinding.SignUpViewBinding
 import nguyen.dev.kotlinentrancetest.repository.models.UserSignInReq
+import nguyen.dev.kotlinentrancetest.repository.models.UserSignUpReq
 import nguyen.dev.kotlinentrancetest.utils.setHyperText
 import nguyen.dev.kotlinentrancetest.utils.viewModel
 import nguyen.dev.kotlinentrancetest.viewmodel.SignUpViewModel
@@ -46,6 +47,16 @@ class SignUpFragment: Fragment(R.layout.sign_up_view), SignUpView {
     }
 
     private fun observeLiveData() {
+        signUpVM.signUpSuccessLiveData.observe(this, Observer {
+            it?:return@Observer
+            startSignIn()
+        })
+
+        signUpVM.signUpFailLiveData.observe(this, Observer {
+            it?:return@Observer
+            Toast.makeText(this.context, "getListFail - $it", Toast.LENGTH_SHORT).show()
+        })
+
         signUpVM.signInSuccessLiveData.observe(this, Observer {
             it?:return@Observer
             this.navController?.navigate(MainGraphDirections.actionGlobalCategoriesListFragment())
@@ -57,6 +68,14 @@ class SignUpFragment: Fragment(R.layout.sign_up_view), SignUpView {
         })
     }
 
+    private fun startSignIn() {
+        val reqSignIn = UserSignInReq().apply {
+            this.email = vb.textInputEditTextEmail.text.toString()
+            this.password = vb.textInputEditTextPassword.text.toString()
+        }
+        signUpVM.usrSignIn(reqSignIn)
+    }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
@@ -66,6 +85,8 @@ class SignUpFragment: Fragment(R.layout.sign_up_view), SignUpView {
     private fun clearObservers() {
         signUpVM.signInSuccessLiveData.removeObservers(this)
         signUpVM.signInFailLiveData.removeObservers(this)
+        signUpVM.signUpSuccessLiveData.removeObservers(this)
+        signUpVM.signUpFailLiveData.removeObservers(this)
         signUpVM.clear()
     }
 
@@ -86,11 +107,11 @@ class SignUpFragment: Fragment(R.layout.sign_up_view), SignUpView {
 
     private fun validateInput() {
         if(isDataFilled()) {
-            val req = UserSignInReq().apply {
+            val req = UserSignUpReq().apply {
                 this.email = vb.textInputEditTextEmail.text.toString()
                 this.password = vb.textInputEditTextPassword.text.toString()
             }
-            signUpVM.usrSignIn(req)
+            signUpVM.userSignUp(req)
         } else {
             Toast.makeText(this.context, "Make sure all data is filled and have checked over 16", Toast.LENGTH_SHORT).show()
         }

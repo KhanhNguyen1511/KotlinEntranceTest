@@ -20,12 +20,16 @@ class SignUpViewModel: ViewModel() {
     val signInSuccessLiveData = MutableLiveData<UserSignInResp?>()
     val signInFailLiveData = MutableLiveData<String?>()
 
-    fun usrSignUp(req: UserSignUpReq) {
+    fun userSignUp(req: UserSignUpReq) {
         try {
             viewModelScope.launch(Dispatchers.IO) {
                 UserRepository.signUp(req).collect {
-                    val resp = it.data.toString().parse(UserSignUpResp::class.java) ?: UserSignUpResp()
-                    signUpSuccessLiveData.postValue(resp)
+                    val resp = it.data.toString().parse(UserSignUpResp::class.java)?: UserSignUpResp()
+                    if (resp.id!=0) {
+                        signUpSuccessLiveData.postValue(resp)
+                    } else {
+                        signUpFailLiveData.postValue("Some thing went wrong!")
+                    }
                 }
             }
         } catch (e: Exception) {
