@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/signUpFragment">
+
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="nguyen.dev.kotlinentrancetest.ui.signup.SignUpFragment"
+        android:label="SignUpFragment"
+        tools:layout="@layout/sign_up_view"/>
+    <fragment
+        tools:layout="@layout/categories_list_view"
+        android:id="@+id/categoriesListFragment"
+        android:name="nguyen.dev.kotlinentrancetest.ui.categories.CategoriesListFragment"
+        android:label="CategoriesListFragment" />
+    <action android:id="@+id/action_global_categoriesListFragment" app:destination="@id/categoriesListFragment" />
+    <action android:id="@+id/action_global_signUpFragment" app:destination="@id/signUpFragment" />
+</navigation>

@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/viewImage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:src="@mipmap/img_139"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/bg_black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="@dimen/_14sdp"
+        android:layout_height="@dimen/_14sdp"
+        android:src="@drawable/ic_back"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginStart="@dimen/_12sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/viewSignUpBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_16sdp"
+        android:layout_marginBottom="@dimen/_30sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/viewImgButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/login_btn"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/viewTextSignUp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_sign_up"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_16ssp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/viewTextTerms"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_30sdp"
+        android:lineSpacingExtra="@dimen/_2sdp"
+        android:textSize="@dimen/_11ssp"
+        app:layout_constraintBottom_toTopOf="@+id/viewSignUpBtn"
+        app:layout_constraintEnd_toEndOf="@id/viewSignUpBtn"
+        app:layout_constraintStart_toStartOf="@id/viewSignUpBtn"
+        tools:text="@string/app_terms" />
+
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/viewCheckTerms"
+        android:layout_width="@dimen/_22sdp"
+        android:layout_height="@dimen/_22sdp"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:background="@drawable/custom_checkbox"
+        android:button="@null"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@id/viewTextTerms"
+        app:layout_constraintStart_toStartOf="@id/viewTextTerms" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtViewAgeOver"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_8ssp"
+        android:text="@string/checkbox_content"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintBottom_toBottomOf="@id/viewCheckTerms"
+        app:layout_constraintStart_toEndOf="@id/viewCheckTerms"
+        app:layout_constraintTop_toTopOf="@id/viewCheckTerms" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/viewInput"
+        android:layout_marginBottom="@dimen/_20sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="@dimen/_12sdp"
+        app:layout_constraintBottom_toTopOf="@id/txtViewAgeOver"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
+            app:hintTextColor="@color/white_50"
+            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="0dp"
+            app:errorEnabled="true"
+            app:errorTextAppearance="@style/errorStyle"
+            app:helperTextTextAppearance="@style/helperStyle"
+            app:helperTextTextColor="@color/red_100"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textInputEditTextEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:cursorVisible="true"
+                android:focusableInTouchMode="true"
+                android:textCursorDrawable="@color/white"
+                android:backgroundTint="@color/color_647"
+                android:hint="Your Email"
+                android:minHeight="@dimen/_52sdp"
+                android:paddingTop="@dimen/_24sdp"
+                android:singleLine="true"
+                android:textColor="@color/white" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:animateLayoutChanges="true"
+            app:hintTextColor="@color/white_50"
+            app:boxStrokeWidth="0dp"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@color/white_50"
+            app:boxStrokeWidthFocused="0dp"
+            app:errorEnabled="true"
+            app:errorTextAppearance="@style/errorStyle"
+            app:helperTextTextColor="@color/red_100"
+            app:layout_constraintTop_toBottomOf="@id/textInputLayoutEmail">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textInputEditTextPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:cursorVisible="true"
+                android:textCursorDrawable="@color/white"
+                android:focusableInTouchMode="true"
+                android:hint="Your password"
+                android:minHeight="@dimen/_52sdp"
+                android:paddingTop="@dimen/_24sdp"
+                android:singleLine="true"
+                android:inputType="textPassword"
+                android:textColor="@color/white" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:id="@+id/strengthIndicator"
+            app:layout_constraintTop_toBottomOf="@id/textInputLayoutPassword"
+            app:layout_constraintStart_toStartOf="@id/textInputLayoutPassword"
+            app:layout_constraintEnd_toEndOf="@id/textInputLayoutPassword"
+            android:layout_width="0dp"
+            android:layout_height=".5dp"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textStrength"
+            app:layout_constraintTop_toBottomOf="@id/strengthIndicator"
+            app:layout_constraintEnd_toEndOf="@id/strengthIndicator"
+            android:layout_marginTop="@dimen/_8sdp"
+            tools:text="Weak"
+            android:textSize="@dimen/_12ssp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/viewTextStart"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/viewInput"
+        android:layout_marginStart="@dimen/_12sdp"
+        android:layout_marginBottom="@dimen/_30sdp"
+        android:text="@string/start_title"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_20sdp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

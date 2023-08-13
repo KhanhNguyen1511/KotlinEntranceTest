@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="AppCustomView">
+        <!--TEXT-->
+        <attr name="android:title" format="string" />
+        <attr name="android:text" format="string" />
+        <attr name="android:textSize" format="reference" />
+        <attr name="android:hint" format="string" />
+        <attr name="android:clickable" format="boolean" />
+        <!--INPUT TYPE-->
+        <attr name="android:textAllCaps" format="boolean" />
+        <attr name="android:maxLength" format="integer" />
+        <attr name="android:inputType" format="reference" />
+        <attr name="android:imeOptions" format="reference" />
+        <attr name="android:maxLines" format="integer" />
+        <attr name="android:minLines" format="integer" />
+        <attr name="android:textStyle" format="integer" />
+        <attr name="android:nextFocusForward" format="integer" />
+        <!--COLOR-->
+        <attr name="android:textColor" format="reference" />
+        <attr name="android:textColorHint" format="reference" />
+        <attr name="android:tint" format="integer" />
+        <attr name="android:drawableTint" format="integer" />
+        <attr name="android:backgroundTint" format="integer" />
+        <attr name="vectorTintStartDrawable" format="integer" />
+        <attr name="vectorTintEndDrawable" format="integer" />
+        <!--DRAWABLE-->
+        <attr name="android:src" format="reference" />
+        <attr name="android:background" format="reference" />
+        <attr name="android:drawableStart" format="reference" />
+        <attr name="android:drawableEnd" format="reference" />
+        <attr name="android:drawable" format="reference" />
+        <attr name="android:drawableTop" format="reference" />
+        <attr name="android:drawableBottom" format="reference" />
+        <!--CHECKABLE-->
+        <attr name="android:checked" format="boolean" />
+        <attr name="android:checkable" format="boolean" />
+        <!--LAYOUT-->
+        <attr name="android:gravity" format="reference" />
+        <attr name="android:orientation" format="integer" />
+        <attr name="android:radius" format="integer" />
+        <!--PADDING-->
+        <attr name="android:paddingStart" format="dimension" />
+        <attr name="android:paddingEnd" format="dimension" />
+        <attr name="android:paddingTop" format="dimension" />
+        <attr name="android:paddingBottom" format="dimension" />
+        <!--SELECTORS-->
+        <attr name="android:enabled" format="boolean" />
+        <attr name="isSwitch" format="boolean" />
+        <attr name="isSwitchLang" format="boolean" />
+        <!--EXPANDABLE-->
+        <attr name="expandDuration" format="integer" />
+        <attr name="expanded" format="boolean" />
+        <attr name="expandOrientation" format="integer" />
+        <attr name="expandParallax" format="float" />
+        <!--APP CONSTRAINTS-->
+        <attr name="radius" format="dimension" />
+        <attr name="radiusTopLeft" format="dimension" />
+        <attr name="radiusTopRight" format="dimension" />
+        <attr name="radiusBottomLeft" format="dimension" />
+        <attr name="radiusBottomRight" format="dimension" />
+        <attr name="strokeLineColor" format="color" />
+        <attr name="strokeLineWidth" format="dimension" />
+        <attr name="dashLineWidth" format="dimension" />
+        <attr name="dashLineGap" format="dimension" />
+        <attr name="backgroundColor" format="color" />
+
+        <!--Other-->
+        <attr name="noneOptional" format="boolean" />
+        <!--iconEnd-->
+        <attr name="iconEnd" format="reference" />
+        <attr name="iconEndColor" format="color" />
+
+        <attr name="lostFocusClickOnly" format="boolean" />
+
+        <!--RANGE_VIEW-->
+        <attr name="plusAndMinus" format="boolean" />
+        <attr name="inputEnable" format="boolean" />
+
+        <attr name="iconStartDrawable" format="reference" />
+        <attr name="iconEndDrawable" format="reference" />
+        <attr name="hint" format="string" />
+        <attr name="isKeepOriginalIconEndColor" format="boolean" />
+        <attr name="isDisableEmotionIconInput" format="boolean" />
+        <attr name="isAlphanumericOnly" format="boolean" />
+        <attr name="isAlphanumericSpaceOnly" format="boolean" />
+        <attr name="paddingEnd" format="reference|dimension" />
+
+    </declare-styleable>
+
+    <declare-styleable name="ShimmerLayout">
+        <attr name="shimmer_clip_to_children" format="boolean" />
+        <attr name="shimmer_colored" format="boolean" />
+        <attr name="shimmer_base_color" format="color" />
+        <attr name="shimmer_highlight_color" format="color" />
+        <attr name="shimmer_base_alpha" format="float" />
+        <attr name="shimmer_highlight_alpha" format="float" />
+        <attr name="shimmer_auto_start" format="boolean" />
+        <attr name="shimmer_duration" format="integer" />
+        <attr name="shimmer_repeat_count" format="integer" />
+        <attr name="shimmer_repeat_delay" format="integer" />
+        <attr name="shimmer_repeat_mode" format="enum">
+            <enum name="restart" value="1" />
+            <enum name="reverse" value="2" />
+        </attr>
+        <attr name="shimmer_direction" format="enum">
+            <enum name="left_to_right" value="0" />
+            <enum name="top_to_bottom" value="1" />
+            <enum name="right_to_left" value="2" />
+            <enum name="bottom_to_top" value="3" />
+        </attr>
+        <attr name="shimmer_dropoff" format="float" />
+        <attr name="shimmer_fixed_width" format="dimension" />
+        <attr name="shimmer_fixed_height" format="dimension" />
+        <attr name="shimmer_intensity" format="float" />
+        <attr name="shimmer_width_ratio" format="float" />
+        <attr name="shimmer_height_ratio" format="float" />
+        <attr name="shimmer_shape" format="enum">
+            <enum name="linear" value="0" />
+            <enum name="radial" value="1" />
+        </attr>
+        <attr name="shimmer_tilt" format="float" />
+    </declare-styleable>
+
+    <declare-styleable name="UButtonView">
+        <attr name="uButtonName" format="string" />
+        <attr name="uBackground" format="color" />
+        <attr name="uElevation" format="dimension" />
+        <attr name="uRadius" format="dimension" />
+        <attr name="uIcon" format="reference" />
+        <attr name="uIconLoading" format="reference" />
+        <attr name="uEffectClick" format="enum">
+            <enum name="alpha" value="0" />
+            <enum name="ripple" value="1" />
+        </attr>
+        <attr name="uEnabled" format="boolean" />
+        <attr name="uEnableLoading" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="UOptionView">
+        <attr name="optTitle" format="string" />
+        <attr name="optTitleColor" format="color" />
+
+        <attr name="optContent" format="string" />
+        <attr name="optContentColor" format="color" />
+
+        <attr name="optDescription" format="string" />
+        <attr name="optDescriptionColor" format="color" />
+
+        <attr name="optValueFill" format="string" />
+        <attr name="optValueFillColor" format="color" />
+        <attr name="optValueFillBgColor" format="color" />
+
+        <attr name="optValue" format="string" />
+        <attr name="optValueColor" format="color" />
+
+        <attr name="optSrcIcon" format="reference" />
+        <attr name="optTintIcon" format="color" />
+        <attr name="optBgColorIcon" format="color" />
+        <attr name="optBgDrawableIcon" format="reference" />
+
+        <attr name="optSrcArrowRight" format="reference" />
+        <attr name="optTintArrowRight" format="color" />
+
+        <attr name="optShowSwitch" format="boolean" />
+        <attr name="optShowMarkAsRead" format="boolean" />
+        <attr name="optShowClose" format="boolean" />
+
+    </declare-styleable>
+
+    <declare-styleable name="UNoteView">
+        <attr name="noteTitle" format="string" />
+        <attr name="noteTitleColor" format="color" />
+
+        <attr name="noteContent" format="string" />
+        <attr name="noteContentColor" format="color" />
+
+        <attr name="noteExtraButton" format="string" />
+        <attr name="noteExtraButtonColor" format="color" />
+
+        <attr name="noteSrcIcon" format="reference" />
+        <attr name="noteTintIcon" format="color" />
+        <attr name="noteBgColorIcon" format="color" />
+        <attr name="noteBgDrawableIcon" format="reference" />
+
+        <attr name="noteBgColor" format="color" />
+        <attr name="noteBgDrawable" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="UTagView">
+        <attr name="tagSrcIcon" format="reference" />
+        <attr name="tagTitle" format="string" />
+        <attr name="tagBackground" format="color" />
+        <attr name="tagTextColor" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="UTagNoteView">
+        <attr name="tagNoteSrcIcon" format="reference" />
+        <attr name="tagNoteBackground" format="color" />
+        <attr name="tagNoteTitle" format="string" />
+        <attr name="tagNote" format="string" />
+        <attr name="tagNoteValue" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="UToolbarView">
+        <attr name="toolbarTitle" format="string" />
+        <attr name="toolbarSrcBack" format="reference" />
+        <attr name="toolbarSrcRight" format="reference" />
+        <attr name="toolbarColorRight" format="color" />
+        <attr name="toolbarNameRight" format="string" />
+        <attr name="toolbarHideBack" format="boolean" />
+        <attr name="toolbarClose" format="boolean" />
+        <attr name="toolbarTheme" format="enum">
+            <enum name="light" value="0" />
+            <enum name="dark" value="1" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="StepView">
+        <attr name="stepInActiveColor" format="color" />
+        <attr name="stepActiveColor" format="color" />
+        <attr name="stepActiveCount" format="integer" />
+        <attr name="stepCount" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="PinEntryEditText">
+        <attr name="pinAnimationType" format="enum">
+            <enum name="popIn" value="0" />
+            <enum name="fromBottom" value="1" />
+            <enum name="none" value="-1" />
+        </attr>
+        <attr name="pinCharacterMask" format="string" />
+        <attr name="pinRepeatedHint" format="string" />
+        <attr name="pinLineStroke" format="dimension" />
+        <attr name="pinLineStrokeSelected" format="dimension" />
+        <attr name="pinCharacterSpacing" format="dimension" />
+        <attr name="pinTextBottomPadding" format="dimension" />
+        <attr name="pinLineColors" format="color" />
+        <attr name="pinBackgroundDrawable" format="reference" />
+        <attr name="pinBackgroundIsSquare" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="WindowSafeAreaLayout">
+        <attr name="windowSafeAreaLightBackgroundColor" format="color" />
+        <attr name="windowSafeAreaLightBackground" format="reference" />
+    </declare-styleable>
+
+</resources>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="color_647">#647FFF</color>
+    <color name="white_50">#80FFFFFF</color>
+    <color name="red_100">#EC5750</color>
+    <color name="colorTransparent">#00000000</color>
+    <color name="white_12">#1FFFFFFF</color>
+
+    <color name="track_weak">#E05151</color>
+    <color name="track_fair">#E3A063</color>
+    <color name="track_good">#647FFF</color>
+    <color name="track_excellent">#91E2B7</color>
+    <color name="track_default">#6BFFFFFF</color>
+
+
+</resources>

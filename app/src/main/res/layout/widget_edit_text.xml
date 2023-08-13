@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/inputViewLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layoutDescription="@xml/custom_edit_text_scene">
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/inputEditText"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_50sdp"
+        android:background="@null"
+        android:letterSpacing="0.05"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_14ssp"
+        android:tint="@color/white_50"
+        android:textCursorDrawable="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="text" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/inputTextViewHint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorTransparent"
+        android:textColor="@color/red_100"
+        android:textSize="@dimen/_14ssp"
+        android:text="Hint text" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imgIconEnd"
+        app:layout_constraintEnd_toEndOf="@id/inputEditText"
+        app:layout_constraintBottom_toBottomOf="@id/inputEditText"
+        app:layout_constraintTop_toTopOf="@id/inputEditText"
+        tools:src="@drawable/ic_eye"
+        android:layout_width="@dimen/_20sdp"
+        android:layout_height="@dimen/_20sdp"/>
+
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/viewStrengthIndicator"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        app:trackColor="@color/color_647"
+        app:layout_constraintTop_toBottomOf="@id/inputEditText"
+        app:layout_constraintStart_toStartOf="@id/inputEditText"
+        app:layout_constraintEnd_toEndOf="@id/inputEditText"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textStrength"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:textSize="@dimen/_13ssp"
+        android:text="Weak"
+        android:visibility="invisible"
+        tools:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/viewStrengthIndicator"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/inputTextViewError"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        tools:visibility="visible"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:textColor="@color/red_100"
+        android:textSize="@dimen/_10ssp"
+        android:text="Error text" />
+
+</androidx.constraintlayout.motion.widget.MotionLayout>
