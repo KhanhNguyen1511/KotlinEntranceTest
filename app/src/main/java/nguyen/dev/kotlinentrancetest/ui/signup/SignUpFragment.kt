@@ -91,6 +91,7 @@ class SignUpFragment: Fragment(R.layout.sign_up_view), SignUpView {
     }
 
     private fun initViews() {
+        vb.viewImage.setImageResource(R.mipmap.img_139)
         vb.viewTextTerms.setHyperText(resources.getString(R.string.app_terms))
         vb.viewSignUpBtn.setOnClickListener {
             validateInput()

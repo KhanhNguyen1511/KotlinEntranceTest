@@ -7,8 +7,8 @@
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/viewImage"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         android:adjustViewBounds="true"
         android:src="@mipmap/img_139"
         app:layout_constraintEnd_toEndOf="parent"
@@ -28,9 +28,9 @@
     <androidx.appcompat.widget.AppCompatImageView
         android:layout_width="@dimen/_14sdp"
         android:layout_height="@dimen/_14sdp"
-        android:src="@drawable/ic_back"
-        android:layout_marginTop="@dimen/_20sdp"
         android:layout_marginStart="@dimen/_12sdp"
+        android:layout_marginTop="@dimen/_40sdp"
+        android:src="@drawable/ic_back"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -39,7 +39,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/_16sdp"
-        android:layout_marginBottom="@dimen/_30sdp"
+        android:layout_marginBottom="@dimen/_40sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -103,43 +103,55 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/viewInput"
-        android:layout_marginBottom="@dimen/_20sdp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginHorizontal="@dimen/_12sdp"
-        app:layout_constraintBottom_toTopOf="@id/txtViewAgeOver"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_12sdp"
+        android:layout_marginBottom="@dimen/_20sdp"
+        app:layout_constraintBottom_toTopOf="@id/txtViewAgeOver"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayoutEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:animateLayoutChanges="true"
-            app:hintTextColor="@color/white_50"
             app:boxStrokeWidth="0dp"
             app:boxStrokeWidthFocused="0dp"
             app:errorEnabled="true"
             app:errorTextAppearance="@style/errorStyle"
             app:helperTextTextAppearance="@style/helperStyle"
             app:helperTextTextColor="@color/red_100"
+            app:hintTextAppearance="@style/hintStyle"
+            app:hintTextColor="@color/white_50"
             app:layout_constraintTop_toTopOf="parent">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/textInputEditTextEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:backgroundTint="@color/color_647"
                 android:cursorVisible="true"
                 android:focusableInTouchMode="true"
-                android:textCursorDrawable="@color/white"
-                android:backgroundTint="@color/color_647"
                 android:hint="Your Email"
                 android:minHeight="@dimen/_52sdp"
                 android:paddingTop="@dimen/_24sdp"
                 android:singleLine="true"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"
+                android:imeOptions="actionDone"
+                android:textCursorDrawable="@color/white"
+                android:textSize="@dimen/_14ssp" />
 
         </com.google.android.material.textfield.TextInputLayout>
+
+        <View
+            app:layout_constraintTop_toBottomOf="@id/textInputLayoutEmail"
+            app:layout_constraintStart_toStartOf="@id/textInputLayoutEmail"
+            app:layout_constraintEnd_toEndOf="@id/textInputLayoutEmail"
+            android:layout_marginHorizontal="@dimen/_12sdp"
+            android:background="@color/white_50"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_1sdp"/>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayoutPassword"
@@ -147,62 +159,66 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_20sdp"
             android:animateLayoutChanges="true"
-            app:hintTextColor="@color/white_50"
             app:boxStrokeWidth="0dp"
-            app:passwordToggleEnabled="true"
-            app:passwordToggleTint="@color/white_50"
             app:boxStrokeWidthFocused="0dp"
             app:errorEnabled="true"
             app:errorTextAppearance="@style/errorStyle"
             app:helperTextTextColor="@color/red_100"
-            app:layout_constraintTop_toBottomOf="@id/textInputLayoutEmail">
+            app:hintTextAppearance="@style/hintStyle"
+            app:hintTextColor="@color/white_50"
+            app:layout_constraintTop_toBottomOf="@id/textInputLayoutEmail"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@color/white_50">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/textInputEditTextPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:cursorVisible="true"
-                android:textCursorDrawable="@color/white"
                 android:focusableInTouchMode="true"
                 android:hint="Your password"
+                android:inputType="textPassword"
                 android:minHeight="@dimen/_52sdp"
                 android:paddingTop="@dimen/_24sdp"
                 android:singleLine="true"
-                android:inputType="textPassword"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"
+                android:imeOptions="actionDone"
+                android:textCursorDrawable="@color/white"
+                android:textSize="@dimen/_14ssp" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.progressindicator.LinearProgressIndicator
             android:id="@+id/strengthIndicator"
-            app:layout_constraintTop_toBottomOf="@id/textInputLayoutPassword"
-            app:layout_constraintStart_toStartOf="@id/textInputLayoutPassword"
-            app:layout_constraintEnd_toEndOf="@id/textInputLayoutPassword"
             android:layout_width="0dp"
-            android:layout_height=".5dp"/>
+            android:layout_height=".5dp"
+            android:layout_marginHorizontal="@dimen/_12sdp"
+            app:layout_constraintEnd_toEndOf="@id/textInputLayoutPassword"
+            app:layout_constraintStart_toStartOf="@id/textInputLayoutPassword"
+            app:layout_constraintTop_toBottomOf="@id/textInputLayoutPassword" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/textStrength"
-            app:layout_constraintTop_toBottomOf="@id/strengthIndicator"
-            app:layout_constraintEnd_toEndOf="@id/strengthIndicator"
-            android:layout_marginTop="@dimen/_8sdp"
-            tools:text="Weak"
-            android:textSize="@dimen/_12ssp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toEndOf="@id/strengthIndicator"
+            app:layout_constraintTop_toBottomOf="@id/strengthIndicator"
+            tools:text="Weak" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/viewTextStart"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/viewInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_12sdp"
         android:layout_marginBottom="@dimen/_30sdp"
         android:text="@string/start_title"
         android:textColor="@color/white"
         android:textSize="@dimen/_20sdp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        app:layout_constraintBottom_toTopOf="@id/viewInput"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -79,8 +79,8 @@ interface SignUpView {
                         it.progress = 0
                         it.setIndicatorColor(default)
                         vb.textStrength.let {
-                            it.text = "Weak"
-                            it.setTextColor(weakState)
+                            it.text = "Too short"
+                            it.setTextColor(default)
                         }
                     }
                 }
