@@ -29,7 +29,7 @@ class SignUpFragment: Fragment(R.layout.sign_up_view), SignUpView {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = SignUpViewBinding.inflate(inflater, container, false)
         val view = vb.root
         return view

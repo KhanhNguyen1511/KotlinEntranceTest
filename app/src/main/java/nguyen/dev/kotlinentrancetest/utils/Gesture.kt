@@ -1,8 +1,6 @@
 package nguyen.dev.kotlinentrancetest.utils
 
 import android.view.View
-import android.view.inputmethod.EditorInfo
-import android.widget.EditText
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch

@@ -1,6 +1,5 @@
 package nguyen.dev.kotlinentrancetest.repository.repo
 
-import com.google.gson.Gson
 import com.google.gson.JsonObject
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.flow
@@ -10,8 +9,6 @@ import nguyen.dev.kotlinentrancetest.repository.models.UserSignUpReq
 import nguyen.dev.kotlinentrancetest.repository.networking.RestClient
 import nguyen.dev.kotlinentrancetest.repository.networking.handleApi
 import nguyen.dev.kotlinentrancetest.repository.networking.handleResp
-import okhttp3.MediaType.Companion.toMediaTypeOrNull
-import okhttp3.RequestBody.Companion.toRequestBody
 
 object UserRepository {
 

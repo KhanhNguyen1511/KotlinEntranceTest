@@ -1,6 +1,5 @@
 package nguyen.dev.kotlinentrancetest.ui.signup
 
-import android.text.TextUtils
 import androidx.core.content.ContextCompat
 import nguyen.dev.kotlinentrancetest.R
 import java.util.regex.Pattern

@@ -36,7 +36,7 @@ class CategoriesListFragment : Fragment(R.layout.categories_list_view) {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = CategoriesListViewBinding.inflate(inflater, container, false)
         return vb.root
     }

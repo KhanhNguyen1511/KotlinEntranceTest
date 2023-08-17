@@ -57,7 +57,7 @@ class CategoryAdapter : ListAdapter<Category, CategoryAdapter.ViewHolder>(DiffCa
                     return adapterPosition
                 }
 
-                override fun getSelectionKey(): Long? {
+                override fun getSelectionKey(): Long {
                     return itemId
                 }
 
