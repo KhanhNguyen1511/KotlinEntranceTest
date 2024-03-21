@@ -8,7 +8,14 @@
     <string name="text_password">Your password</string>
     <string name="text_choose_category">Please select categories what you would like to\nsee on your feed. You can set this later on Filter.</string>
     <string name="text_welcome">Welcome to Flutter Test</string>
-
+    <string name="field_cannot_be_null">Field can\'t be null</string>
+    <string name="weak">weak</string>
+    <string name="fair">fair</string>
+    <string name="strong">strong</string>
+    <string name="excellent">excellent</string>
+    <string name="too_short">Too short</string>
+    <string name="email_cannot_be_empty">Email cannot be empty</string>
+    <string name="email_invalid">Email invalid</string>
 
 
 </resources>

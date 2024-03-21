@@ -8,21 +8,19 @@ interface SignUpView {
 
     fun SignUpFragment.isDataFilled(): Boolean {
         return when {
-            vb.textInputEditTextEmail.text.toString().isNullOrEmpty() -> {
-                vb.textInputEditTextEmail.error = "Field cannot be null"
+            vb.textInputEditTextEmail.text.isNullOrBlank() -> {
+                vb.textInputEditTextEmail.error = getString(R.string.field_cannot_be_null)
                 return false
             }
-            vb.textInputEditTextPassword.text.toString().isNullOrEmpty() -> {
-                vb.textInputEditTextPassword.error = "Field cannot be null"
+            vb.textInputEditTextPassword.text.isNullOrBlank() -> {
+                vb.textInputEditTextPassword.error = getString(R.string.field_cannot_be_null)
                 return false
             }
             !vb.viewCheckTerms.isChecked -> {
                 return false
             }
-
             else -> {true}
         }
-
     }
 
     fun SignUpFragment.validatePassword(str: String) {
@@ -32,55 +30,52 @@ interface SignUpView {
         val excellentState = ContextCompat.getColor(vb.root.context,R.color.track_excellent)
         val default = ContextCompat.getColor(vb.root.context,R.color.track_default)
 
-        view?.post {
-            vb.strengthIndicator.let {
-                when {
-                    str.length in 1..7 -> {
-                        it.progress = 25
-                        it.setIndicatorColor(weakState)
+        vb.strengthIndicator.let {
+            when {
+                str.length in 1..7 -> {
+                    it.progress = 25
+                    it.setIndicatorColor(weakState)
+                    vb.textStrength.let {
+                        it.text = getString(R.string.weak)
+                        it.setTextColor(weakState)
+                    }
+                }
+                str.length in 8..10 -> {
+                    if (str.isValidLength || str.hasOneUppercase || str.hasOneLowercase || str.hasOneNumber || str.hasOneSpecialCharacter){
+                        it.progress = 50
+                        it.setIndicatorColor(fairState)
                         vb.textStrength.let {
-                            it.text = "Weak"
-                            it.setTextColor(weakState)
+                            it.text = getString(R.string.fair)
+                            it.setTextColor(fairState)
                         }
                     }
-
-                    str.length in 8..10 -> {
-                        if (str.isValidLength || str.hasOneUppercase || str.hasOneLowercase || str.hasOneNumber || str.hasOneSpecialCharacter){
-                            it.progress = 50
-                            it.setIndicatorColor(fairState)
-                            vb.textStrength.let {
-                                it.text = "Fair"
-                                it.setTextColor(fairState)
-                            }
-                        }
-                    }
-                    str.length in 11..13 -> {
-                        if (str.isValidLength || str.hasOneUppercase || str.hasOneLowercase || str.hasOneNumber || str.hasOneSpecialCharacter){
-                            it.progress = 75
-                            it.setIndicatorColor(strongState)
-                            vb.textStrength.let {
-                                it.text = "Strong"
-                                it.setTextColor(strongState)
-                            }
-                        }
-                    }
-                    str.length in 14..16 -> {
-                        if (str.isValidLength || str.hasOneUppercase || str.hasOneLowercase || str.hasOneNumber || str.hasOneSpecialCharacter){
-                            it.progress = 100
-                            it.setIndicatorColor(excellentState)
-                            vb.textStrength.let {
-                                it.text = "Excellent"
-                                it.setTextColor(excellentState)
-                            }
-                        }
-                    }
-                    else -> {
-                        it.progress = 0
-                        it.setIndicatorColor(default)
+                }
+                str.length in 11..13 -> {
+                    if (str.isValidLength || str.hasOneUppercase || str.hasOneLowercase || str.hasOneNumber || str.hasOneSpecialCharacter){
+                        it.progress = 75
+                        it.setIndicatorColor(strongState)
                         vb.textStrength.let {
-                            it.text = "Too short"
-                            it.setTextColor(default)
+                            it.text = getString(R.string.strong)
+                            it.setTextColor(strongState)
                         }
+                    }
+                }
+                str.length in 14..16 -> {
+                    if (str.isValidLength || str.hasOneUppercase || str.hasOneLowercase || str.hasOneNumber || str.hasOneSpecialCharacter){
+                        it.progress = 100
+                        it.setIndicatorColor(excellentState)
+                        vb.textStrength.let {
+                            it.text = getString(R.string.excellent)
+                            it.setTextColor(excellentState)
+                        }
+                    }
+                }
+                else -> {
+                    it.progress = 0
+                    it.setIndicatorColor(default)
+                    vb.textStrength.let {
+                        it.text = getString(R.string.too_short)
+                        it.setTextColor(default)
                     }
                 }
             }
@@ -89,16 +84,24 @@ interface SignUpView {
 
     fun SignUpFragment.validateEmail(str: String) {
         if (str.isEmpty()) {
-            vb.textInputEditTextEmail.error = "Email cannot be empty"
+            vb.textInputEditTextEmail.error = getString(R.string.email_cannot_be_empty)
         } else {
-            if (!android.util.Patterns.EMAIL_ADDRESS.matcher(str).matches()) {
-                vb.textInputEditTextEmail.error = "Email invalid"
+            if (!isValidEmail(str)) {
+                vb.textInputEditTextEmail.error = getString(R.string.email_invalid)
             }
-
         }
-
     }
 
+    private fun isValidEmail(email: String): Boolean {
+        val pattern = Pattern.compile(
+            "^(([\\w-]+\\.)+[\\w-]+|([a-zA-Z]{1}|[\\w-]{2,}))@"
+                    + "((([0-1]?[0-9]{1,2}|25[0-5]|2[0-4][0-9])\\.([0-1]?[0-9]{1,2}|25[0-5]|2[0-4][0-9])\\."
+                    + "([0-1]?[0-9]{1,2}|25[0-5]|2[0-4][0-9])\\.([0-1]?[0-9]{1,2}|25[0-5]|2[0-4][0-9])){1}|"
+                    + "([a-zA-Z]+[\\w-]+\\.)+[a-zA-Z]{2,4})$"
+        )
+        val matcher = pattern.matcher(email)
+        return matcher.matches()
+    }
 }
 
 
